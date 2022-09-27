@@ -1,11 +1,11 @@
 import express from 'express';
-
+import productsRoutes from './routes/products.routes';
+import usersRoutes from './routes/users.routes';
 
 const app = express();
 const port = 3000;
 
-import productsRoutes from './routes/products.routes';
-import usersRoutes from './routes/users.routes';
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
