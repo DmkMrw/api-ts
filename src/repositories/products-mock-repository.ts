@@ -14,7 +14,7 @@ addItem(item: Product): Product {
       return item;
   }
 
-  updateItem(id: string, item: Product): Product {
+  updateItem(id: string, item: Product): Product | undefined{
       this.products = this.products.map(i => {
           if (i.id === id) {
               return {
@@ -34,12 +34,12 @@ addItem(item: Product): Product {
     return true;
   }
 
-  findProductByName(name: string): Product {
+  findProductByName(name: string): Product | undefined{
     const product = this.products.find(i => i.name === name);
-    return product
+    return product;
   }
 
-  getItemById(id: string): Product {
+  getItemById(id: string): Product | undefined{
     return this.products.find(i => i.id === id);
   }
 

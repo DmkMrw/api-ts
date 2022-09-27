@@ -11,7 +11,7 @@ export class UsersMockRepository implements UsersRepository {
       this.users.push(item);
       return item;
   }
-  updateItem(id: string, item: User): User {
+  updateItem(id: string, item: User): User | undefined{
       this.users = this.users.map(i => {
           if (i.id === id) {
               return {
@@ -29,17 +29,17 @@ export class UsersMockRepository implements UsersRepository {
       this.users = this.users.filter(i => i.id !== id);
       return true;
   }
-  getItemById(id: string): User {
+  getItemById(id: string): User | undefined{
       return this.users.find(i => i.id === id);
   }
   getAllItems(): Array<User> {
       return this.users;
   }
-  getItemByRole(role: string): User {
+  getItemByRole(role: string): User | undefined{
       return this.users.find(i => i.role === role);
   }
 
-  findUserByFirstName(name: string): User {
+  findUserByFirstName(name: string): User | undefined{
       return this.users.find(i => i.firstName === name);
   }
 }
